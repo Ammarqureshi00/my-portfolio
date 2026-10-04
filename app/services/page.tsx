@@ -7,8 +7,8 @@ import { SITE } from "@/lib/site";
 import { buildMetadata, crumbsSchema } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "WordPress, WooCommerce & Next.js Services | Ammar Qureshi",
-  description: "Hire a full stack developer: WordPress blogs, WooCommerce stores, plugin fixes, plus Next.js development, React debugging and migration to Next.js for SEO.",
+  title: "WordPress, WooCommerce & Next.js Development | Ammar Qureshi",
+  description: "Build or improve a WordPress site or WooCommerce store, fix a stubborn plugin or checkout issue, or bring a React or Next.js project to life.",
   path: "/services",
 });
 
@@ -22,8 +22,8 @@ export default function ServicesPage() {
       <section className="ph"><div className="w">
         <Breadcrumbs items={[["Home", "/"], ["Services", "/services"]]} />
         <span className="pill">Services</span>
-        <h1>WordPress services that <em>solve</em> the problem</h1>
-        <p className="lead">I’m a full stack developer. I build WordPress blogs and WooCommerce stores, fix the plugin and theme issues that slow them down, and build, debug and migrate React and Next.js sites. Pick the one that matches your situation.</p>
+        <h1>What are you trying to <em>build or fix?</em></h1>
+        <p className="lead">I work on WordPress and WooCommerce sites, and I take on React and Next.js builds, migrations and bugs too. Find the closest match below—or send me a note if your project doesn’t fit neatly into a box.</p>
       </div></section>
       <section><div className="w">
         <ul className="sv pv">
@@ -37,7 +37,7 @@ export default function ServicesPage() {
             </li>
           ))}
         </ul>
-        <p className="c" style={{ marginTop: 40 }}><Link className="btn g" href="/hire">Tell me about your project →</Link></p>
+        <p className="c" style={{ marginTop: 40 }}><Link className="btn g" href="/hire#contact">Tell me what you need →</Link></p>
       </div></section>
     </PageShell>
   );

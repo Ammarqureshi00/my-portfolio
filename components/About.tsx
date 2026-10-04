@@ -9,13 +9,13 @@ export default function About() {
       <div className="w ab">
         <div>
           <span className="pill">About</span>
-          <h2 id="about-h">WordPress built right, <em>problems</em> fixed fast</h2>
-          <p>I&apos;m Ammar Qureshi, a <strong>full stack WordPress developer</strong>. I build blogs, business sites and WooCommerce stores, and I&apos;m the person people call when a plugin conflict, a broken theme update or a slow page is costing them visitors.</p>
-          <p>Because I work across the whole stack, from <strong>WordPress and Shopify to React, Next.js, Laravel and Node.js</strong>, I can usually trace a problem to its real cause instead of patching the symptom. A slow blog might be an oversized image, a heavy plugin or a bad caching rule. I find out which one it is and fix that.</p>
-          <p>My approach is simple: understand the business first, work on a safe copy, change only what&apos;s needed and explain what I did in plain language. You end up with a site that&apos;s faster, easier to edit and properly set up for search, not a pile of fixes you can&apos;t maintain.</p>
+          <h2 id="about-h">Build what helps. <em>Fix what doesn&apos;t.</em></h2>
+          <p>I&apos;m Ammar, a web developer working mainly with <strong>WordPress and WooCommerce</strong>. I build sites and stores, and I also help when an update breaks the layout, checkout stops behaving or a page that used to be quick starts dragging.</p>
+          <p>I work across <strong>Shopify, React, Next.js, PHP, Laravel and Node.js</strong>, so I can follow a problem past the surface and choose a fix that fits the site—not just add another plugin or suggest a rebuild.</p>
+          <p>Before I change a live site, I want to understand what you need from it. I work safely, explain the trade-offs in plain English and leave you with a clear handover.</p>
           <div className="wy" style={{ marginTop: 24 }}>{HOW.map((h) => <span key={h}>{h}</span>)}</div>
           <div className="cta" style={{ marginTop: 28 }}>
-            <Link className="btn g" href="/hire">Hire me →</Link>
+            <Link className="btn g" href="/hire#contact">Talk about your project →</Link>
             <a className="btn" href="#work">See my work</a>
           </div>
         </div>

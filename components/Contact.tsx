@@ -4,7 +4,7 @@ import { CONTACT, SOCIALS } from "@/lib/social";
 import Icon from "@/components/Icon";
 import { track } from "@/lib/analytics";
 
-const TYPES = ["WordPress website", "Shopify storefront", "Frontend / React", "Backend / API", "Performance & SEO", "Automation", "Something else"];
+const TYPES = ["Not sure yet", "Something is broken", "Build a new website", "Improve an existing site", "Online store or checkout", "React / Next.js work"];
 
 export default function Contact() {
   const [status, setStatus] = useState("");
@@ -26,8 +26,8 @@ export default function Contact() {
         <div className="glass ct">
           <div>
             <span className="pill">Contact</span>
-            <h2 id="contact-h">Have a project <em>in mind?</em></h2>
-            <p className="lead">Whether you need a custom WordPress website, Shopify storefront, modern frontend experience or technical optimization, let&apos;s talk.</p>
+            <h2 id="contact-h">What do you need your <em>site to do?</em></h2>
+            <p className="lead">A link and a couple of sentences are enough to start. Tell me what you want to build, what is not working or what you would like to improve. I&apos;ll tell you honestly if I can help.</p>
             <div className="ch">
               {SOCIALS.map((c) => (
                 <a key={c.key} href={c.href} {...(c.external ? { target: "_blank", rel: "noopener" } : {})}>
@@ -39,9 +39,10 @@ export default function Contact() {
           <form onSubmit={onSubmit} noValidate>
             <label>Name<input name="name" autoComplete="name" required /></label>
             <label>Email<input name="email" type="email" autoComplete="email" required /></label>
-            <label>Project type<select name="type">{TYPES.map((t) => <option key={t}>{t}</option>)}</select></label>
-            <label>Message<textarea name="message" required /></label>
-            <button className="btn g" style={{ justifySelf: "start" }} type="submit">Send Message</button>
+            <label>What do you need?<select name="type">{TYPES.map((t) => <option key={t}>{t}</option>)}</select></label>
+            <label>Message<textarea name="message" placeholder="A website link, what is happening, and what you want to happen instead…" required /></label>
+            <button className="btn g" style={{ justifySelf: "start" }} type="submit">Continue in email →</button>
+            <p className="form-note">This opens an email draft with your message; it is only sent when you press Send. Prefer WhatsApp? <a href={CONTACT.whatsapp} target="_blank" rel="noopener">Message me there</a>.</p>
             <p id="fs" role="status">{status}</p>
           </form>
         </div>

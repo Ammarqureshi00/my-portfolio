@@ -12,6 +12,7 @@ export type ServicePage = {
   metaDescription: string;
   h1: string;
   intro: string;
+  firstCheck: string;
   forWho: string[];
   symptoms?: string[];
   included: [string, string][];
@@ -19,7 +20,6 @@ export type ServicePage = {
   faqs: Faq[];
   posts: string[];
   proof?: [string, string];
-  terminal?: string[];
 };
 
 export type Post = {
@@ -41,11 +41,12 @@ const BASE_SERVICES: ServicePage[] = [
   {
     slug: "wordpress-blog-development",
     name: "WordPress Blog Development",
-    short: "Fast, search-ready blogs for bloggers, publishers and businesses — built or rescued.",
+    short: "Build a WordPress blog that’s easy to publish to—or get an existing slow, cluttered one back on track.",
     metaTitle: "WordPress Blog Development & Fixes | Ammar Qureshi",
     metaDescription: "Custom WordPress blog development and fixes: fast themes, clean plugin setups, technical SEO and ad-ready layouts for bloggers and publishers.",
     h1: "WordPress Blog Development for Bloggers & Publishers",
-    intro: "I’m Ammar Qureshi, a full stack WordPress developer. I build WordPress blogs that load fast, read well and are set up for search from day one — and I fix the theme and plugin problems that quietly slow existing blogs down.",
+    intro: "Starting a blog is easier when the publishing setup is clear from day one. I build WordPress blogs that are straightforward to edit and structured for search, and I can also help untangle an existing site that has become slow or difficult to manage.",
+    firstCheck: "Who will publish, what needs to be easy to find, and how posts should be organized. Those choices shape a blog that stays manageable after launch.",
     forWho: ["Bloggers and niche publishers launching a content site", "News, review and affiliate websites that depend on search traffic", "Businesses that want a blog that supports their main website", "Owners of a slow, cluttered or broken blog that needs a clean-up, not a rebuild"],
     included: [
       ["Custom or child theme", "A lightweight theme (or a safe child theme of your current one) so design changes survive updates."],
@@ -71,11 +72,12 @@ const BASE_SERVICES: ServicePage[] = [
   {
     slug: "woocommerce-development",
     name: "WooCommerce Development",
-    short: "Custom WooCommerce stores, faster checkout, product-page SEO and safe migrations.",
+    short: "Build or improve a WooCommerce store, from product pages and checkout to safe updates and migrations.",
     metaTitle: "WooCommerce Developer: Custom Store Development",
     metaDescription: "Freelance WooCommerce developer for custom stores, faster checkout, product-page SEO, payment integrations and Shopify-to-WooCommerce migrations.",
-    h1: "WooCommerce Developer for Fast, Conversion-Focused Stores",
-    intro: "I build and improve WooCommerce stores with a focus on speed, a clean checkout and product pages that search engines can understand. I also build Shopify storefronts, so I can tell you honestly which platform fits your business.",
+    h1: "WooCommerce Development for Stores That Need to Sell",
+    intro: "A store needs to be easy to browse, but the important details are often in the cart, checkout and the way orders are handled. I build and improve WooCommerce stores, and I work with Shopify too—so I can help you choose the platform that fits how you actually run the business.",
+    firstCheck: "I’d walk through a product page, cart and checkout on a phone before changing the theme. The friction is often in that journey, not the homepage.",
     forWho: ["Store owners with a slow or confusing WooCommerce checkout", "Businesses launching a new WooCommerce shop", "Shops moving from Shopify, Wix or another platform to WooCommerce", "Owners whose plugins and theme no longer play well together"],
     included: [
       ["Custom theme & template overrides", "Product, category, cart and checkout templates adjusted the safe way, via a child theme or hooks."],
@@ -101,11 +103,12 @@ const BASE_SERVICES: ServicePage[] = [
   {
     slug: "wordpress-plugin-theme-issue-fixing",
     name: "WordPress Plugin & Theme Issue Fixing",
-    short: "Plugin conflicts, theme bugs and slow pages found and fixed safely on staging.",
+    short: "Track down the plugin, theme or update causing trouble—and fix it without guesswork.",
     metaTitle: "WordPress Plugin & Theme Issue Fixing Service",
     metaDescription: "Plugin conflicts, theme bugs, white screens and slow pages fixed safely on staging. Hire a WordPress developer to troubleshoot your site.",
     h1: "WordPress Plugin & Theme Issue Fixing",
-    intro: "Most WordPress problems come from a plugin, a theme or a setting interacting badly. I isolate the cause on a staging copy, fix it properly and tell you in plain language what went wrong — so it doesn’t come back.",
+    intro: "If a site broke after an update, the fastest route is usually to find the change that caused it—not try random fixes on the live site. I trace plugin, theme and configuration issues on a safe copy where possible, then explain what went wrong and what I changed.",
+    firstCheck: "I’d ask what changed just before the issue appeared, then reproduce it safely and check the error logs before changing plugins.",
     forWho: ["Bloggers whose site broke after an update", "Store owners with a checkout or layout bug", "Agencies that need a reliable developer for tricky WordPress issues", "Anyone who’s tried five plugins and still has the problem"],
     symptoms: ["White screen or “critical error” message", "Layout broke after a plugin or theme update", "Site became slow after installing a plugin", "Page builder or customizer won’t save", "Contact forms not sending emails", "Mobile layout overlapping or cut off", "Admin dashboard painfully slow", "Traffic dropped after a redesign or migration"],
     included: [
@@ -138,7 +141,7 @@ const BASE_POSTS: Post[] = [
     category: "Troubleshooting",
     date: "2026-10-04",
     updated: "2026-10-04",
-    intro: "A plugin conflict usually shows up right after an update: a white screen, a broken layout, a form that stops sending or an admin area that crawls. The good news is that conflicts can be found with a repeatable method instead of guesswork. This is the workflow I follow when I troubleshoot a WordPress plugin conflict.",
+    intro: "A site can go from fine to broken after one update: a blank screen, a mangled layout, a form that stops sending. Rather than switch plugins off at random, work through the checks below on a staging copy and narrow down what changed.",
     sections: [
       { h: "Step 0: Work on a copy, not the live site", p: ["Take a full backup first and, if your host offers it, clone the site to a staging environment. Deactivating plugins on a live blog or store can break forms, payments or ads for real visitors."] },
       { h: "Step 1: Turn on debug logging", p: ["Add these lines to wp-config.php, above the comment that says to stop editing. They write errors to a file instead of showing them to visitors."], code: "define( 'WP_DEBUG', true );\ndefine( 'WP_DEBUG_LOG', true );\ndefine( 'WP_DEBUG_DISPLAY', false );", after: ["Reproduce the problem, then open wp-content/debug.log. A fatal error normally names a file path, and the folder under wp-content/plugins or wp-content/themes tells you who is responsible. Switch debugging off again when you’re done."] },
@@ -160,7 +163,7 @@ const BASE_POSTS: Post[] = [
     category: "WooCommerce",
     date: "2026-10-04",
     updated: "2026-10-04",
-    intro: "A slow shop loses customers at exactly the moments that matter: product pages, cart and checkout. WooCommerce speed optimization isn’t one magic plugin; it’s a short list of fixes applied in the right order. Here’s the checklist I work through.",
+    intro: "If a store feels slow, start with the pages where people browse products and place an order. There isn’t one plugin that fixes everything; images, scripts, caching and hosting all play a part. This checklist puts the checks in a useful order.",
     sections: [
       { h: "1. Measure the pages that earn money", p: ["Test a product page, a category page, the cart and the checkout separately in PageSpeed Insights, and check the Core Web Vitals report in Search Console. Note the biggest problems on each page before changing anything, so you can prove what helped."] },
       { h: "2. Cache the right pages, and exclude the wrong ones", p: ["Page caching helps on the home page, categories and products. The cart, checkout and My Account pages are personal and must not be served from a shared cache. Most WooCommerce-aware cache plugins and hosts handle this, but verify it: add a product to your cart in one browser and make sure another browser doesn’t see it."] },
@@ -183,7 +186,7 @@ const BASE_POSTS: Post[] = [
     category: "SEO",
     date: "2026-10-04",
     updated: "2026-10-04",
-    intro: "Good WordPress blog SEO starts before you publish the first post. Get the foundations right once and every article benefits. This is the setup checklist I use when launching a new blog.",
+    intro: "Before you publish the first post, check the settings that control whether search engines can find your site and how its URLs are organized. Fixing them later is possible, but doing it now saves redirects and cleanup.",
     sections: [
       { h: "1. Make sure search engines can see the site", p: ["In Settings → Reading, confirm that “Discourage search engines from indexing this site” is unchecked. Many sites launch with it still on. Also make sure the whole site runs on HTTPS and that you have one preferred version of the domain, with or without www."] },
       { h: "2. Set clean permalinks before you publish", p: ["Use Settings → Permalinks and choose the post name structure. Decide this early: changing URLs later means setting up redirects for every post."] },

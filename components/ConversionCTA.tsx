@@ -4,9 +4,9 @@ export default function ConversionCTA() {
   return (
     <section className="bottom-cta" aria-labelledby="bottom-cta-h">
       <div className="w c">
-        <h2 id="bottom-cta-h">Have a project <em>in mind?</em></h2>
-        <p className="lead">Share what you’re building or what needs fixing, and we can work out the next step.</p>
-        <Link className="btn g" href="/hire">Tell me about your project →</Link>
+        <h2 id="bottom-cta-h">A quick note is enough to <em>start.</em></h2>
+        <p className="lead">Tell me what you&apos;re building, what&apos;s broken or what you want the site to do next. I&apos;ll reply with an honest next step.</p>
+        <Link className="btn g" href="/hire#contact">Send a project brief →</Link>
       </div>
     </section>
   );

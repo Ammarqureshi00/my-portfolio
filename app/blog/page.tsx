@@ -7,8 +7,8 @@ import { SITE } from "@/lib/site";
 import { buildMetadata, crumbsSchema } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "WordPress & WooCommerce Blog | Ammar Qureshi",
-  description: "Practical WordPress and WooCommerce guides: plugin conflict fixes, speed optimization and blog SEO setup, written by a full stack WordPress developer.",
+  title: "Notes on WordPress, WooCommerce, React & Next.js | Ammar Qureshi",
+  description: "Clear, practical guides for WordPress and WooCommerce problems, plus the React and Next.js errors that can stop a project in its tracks.",
   path: "/blog",
 });
 
@@ -23,8 +23,8 @@ export default function BlogIndex() {
       <section className="ph"><div className="w">
         <Breadcrumbs items={[["Home", "/"], ["Blog", "/blog"]]} />
         <span className="pill">Blog</span>
-        <h1>WordPress &amp; WooCommerce <em>fixes</em>, checklists and guides</h1>
-        <p className="lead">Short, practical articles from real troubleshooting work: what breaks, why, and how to fix it safely.</p>
+        <h1>Notes from the <em>builds and fixes</em></h1>
+        <p className="lead">The kind of notes I wish were easier to find when a site breaks: what the error means, what to check first and how to avoid making it worse.</p>
       </div></section>
       <section><div className="w">
         <div className="pcs">{posts.map((p) => (

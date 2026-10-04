@@ -8,8 +8,8 @@ import { buildMetadata, crumbsSchema } from "@/lib/seo";
 const PATH = "/about";
 
 export const metadata = buildMetadata({
-  title: "About Ammar Qureshi | Full-Stack Web Developer",
-  description: "Meet Ammar Qureshi, a full-stack web developer working across WordPress, Shopify, React, Laravel, performance and technical SEO.",
+git   title: "About Ammar Qureshi | WordPress & Full-Stack Developer",
+  description: "I build and improve WordPress and WooCommerce sites, troubleshoot the problems that slow them down, and develop custom React and Next.js interfaces.",
   path: PATH,
 });
 
@@ -27,27 +27,27 @@ export default function AboutPage() {
       <section className="ph"><div className="w nar">
         <Breadcrumbs items={crumbs} />
         <span className="pill">About</span>
-        <h1>The developer behind <em>the work</em></h1>
-        <p className="lead">I’m Ammar Qureshi, a full-stack web developer focused on building and improving websites, storefronts and web applications.</p>
+        <h1>A developer who starts with <em>the actual problem</em></h1>
+        <p className="lead">I’m Ammar. I build WordPress and WooCommerce sites, sort out the issues that get in their way, and develop custom interfaces with React and Next.js.</p>
       </div></section>
 
       <section><div className="w two">
         <div className="prose">
-          <h2 className="h3">A practical, end-to-end approach</h2>
-          <p>I work across WordPress, WooCommerce, Shopify and modern JavaScript stacks. That range lets me handle the visible interface as well as the implementation behind it, from a content site or storefront to an API-driven feature.</p>
-          <p>My work includes building new experiences and troubleshooting existing ones: plugin and theme issues, performance concerns, technical SEO, and responsive behavior. I start by understanding the goal and constraints, then focus on the smallest clear solution that will be straightforward to maintain.</p>
-          <p>For site changes, I use a staging-first approach and explain the work in plain language. The aim is to leave the site easier to use and maintain, with performance and search considerations included in the implementation.</p>
+          <h2 className="h3">I start with the problem, not a pile of tools</h2>
+          <p>Sometimes that means building a site from a clear brief. Sometimes it means tracing a plugin conflict, a slow checkout or a page that looks fine on desktop but falls apart on a phone. I work across WordPress, WooCommerce, Shopify, React, Next.js and the APIs behind them.</p>
+          <p>I don’t recommend a rebuild just because it would be more interesting to code. I look at what is already working, explain the options and keep the fix as small as the problem allows.</p>
+          <p>For existing sites, I use a safe working copy where the setup allows it. Before I hand anything over, I explain what changed and what you need to know to keep it running.</p>
           {SITE.resumeUrl && <p><a className="btn" href={SITE.resumeUrl} target="_blank" rel="noopener" data-track="resume_download">Download résumé ↗</a></p>}
         </div>
         <aside className="glass facts">
-          <h2 className="h3">What I work on</h2>
+          <h2 className="h3">What I can help with</h2>
           <ul className="ticks">
-            <li>Websites, blogs and online stores</li>
-            <li>Frontend interfaces and backend APIs</li>
-            <li>Site troubleshooting and improvements</li>
-            <li>Performance and technical SEO</li>
+            <li>New WordPress sites, blogs and WooCommerce stores</li>
+            <li>Plugin, theme, checkout and performance problems</li>
+            <li>Custom React and Next.js interfaces</li>
+            <li>Technical SEO and third-party integrations</li>
           </ul>
-          <Link className="more" href="/hire">Discuss a project →</Link>
+          <Link className="more" href="/hire#contact">Tell me what you need →</Link>
         </aside>
       </div></section>
 

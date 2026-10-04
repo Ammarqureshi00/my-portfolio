@@ -9,12 +9,12 @@ export default function NotFound() {
     <main style={{ minHeight: "100svh", display: "grid", placeItems: "center", textAlign: "center", padding: 24 }}>
       <div>
         <h1>404</h1>
-        <p className="sub" style={{ margin: "0 auto 24px" }}>This page doesn’t exist, but these do:</p>
+        <p className="sub" style={{ margin: "0 auto 24px" }}>Looks like a wrong turn. Try one of these instead:</p>
         <div className="cta" style={{ justifyContent: "center" }}>
           <Link className="btn g" href="/">Home</Link>
           <Link className="btn" href="/services">Services</Link>
           <Link className="btn" href="/blog">Blog</Link>
-          <Link className="btn" href="/hire">Hire me</Link>
+          <Link className="btn" href="/hire#contact">Start a project</Link>
         </div>
         <p style={{ marginTop: 24, fontSize: 14 }}>
           {SOCIALS.filter((s) => s.key === "mail" || s.key === "whatsapp").map((s, i) => (

@@ -8,7 +8,8 @@ export const REACT_SERVICES: ServicePage[] = [
   "metaTitle": "Next.js Developer for Hire | Ammar Qureshi",
   "metaDescription": "Hire a freelance Next.js developer for fast, SEO-friendly websites and web apps: App Router, static generation, metadata, structured data and Core Web Vitals.",
   "h1": "Next.js Developer for Fast, SEO-Friendly Websites",
-  "intro": "I’m Ammar Qureshi, a full stack developer who builds with Next.js as well as WordPress. As a Next.js developer I focus on pages that load quickly, render real HTML for search engines and stay easy to maintain, whether you need a marketing site, a blog or a web app.",
+  "intro": "A Next.js project can be a marketing site, a publication or an app—and each needs a slightly different setup. I build with the App Router, choosing how pages render and where client-side JavaScript is really needed, so the result stays quick and understandable.",
+  "firstCheck": "I’d map the page types and data first, then decide which routes can be pre-rendered and which need live data.",
   "forWho": [
    "Startups that need a fast marketing site or MVP front end",
    "Businesses whose current site is slow or struggling to rank",
@@ -105,13 +106,6 @@ export const REACT_SERVICES: ServicePage[] = [
    "See it in practice: this portfolio is a Next.js project",
    "/work/nextjs-portfolio-seo"
   ],
-  "terminal": [
-   "$ npm run build",
-   "✓ Compiled successfully",
-   "✓ Generating static pages (21/21)",
-   "✓ metadata, sitemap and JSON-LD generated",
-   "✓ preview deployment ready"
-  ]
  },
  {
   "slug": "react-debugging-fixing",
@@ -121,6 +115,7 @@ export const REACT_SERVICES: ServicePage[] = [
   "metaDescription": "Hire a developer to debug React and Next.js apps: hydration errors, build failures, slow renders, state bugs, API issues and deployment problems.",
   "h1": "React & Next.js Debugging and Bug Fixing",
   "intro": "If your React or Next.js app throws an error you can’t get past, or works locally but fails once deployed, I’ll find the cause, fix it with the smallest safe change and explain what went wrong so it doesn’t come back.",
+  "firstCheck": "I’d start with the exact error, what action triggers it and the last change before it appeared—then reproduce it before touching code.",
   "forWho": [
    "Founders with an app stuck on a blocking bug",
    "Teams with a deadline and an error nobody can reproduce",
@@ -217,14 +212,6 @@ export const REACT_SERVICES: ServicePage[] = [
    "react-too-many-re-renders-error-fix",
    "nextjs-build-failed-on-vercel"
   ],
-  "terminal": [
-   "$ npm run build",
-   "✗ ReferenceError: window is not defined",
-   "✓ browser-only code moved into useEffect",
-   "$ npm run build",
-   "✓ Compiled successfully",
-   "✓ fixed, explained, prevented"
-  ]
  },
  {
   "slug": "react-to-nextjs-migration",
@@ -233,7 +220,8 @@ export const REACT_SERVICES: ServicePage[] = [
   "metaTitle": "Convert React App to Next.js for SEO | Ammar Qureshi",
   "metaDescription": "Migrate a client-rendered React, Vite or CRA site to Next.js so search engines see your content: URLs, redirects, metadata, sitemap and speed.",
   "h1": "Convert Your React App to Next.js for SEO",
-  "intro": "A React single-page app that renders in the browser hands crawlers a nearly empty HTML shell. Search engines can often run JavaScript, but it can delay indexing, and other crawlers and link previews may not run it at all. If you want to convert your React app to Next.js, I move it so every page ships real HTML, without breaking your URLs or design.",
+  "intro": "A client-rendered React app can give search engines and link previews less to work with until JavaScript runs. If search visibility, page speed or server-rendered content matters, moving to Next.js may help—but a logged-in app may not need it. I’ll check the trade-offs before moving routes.",
+  "firstCheck": "Before moving routes, I’d compare current URLs, how each page gets data and where search traffic comes from. That shows whether a migration is worth doing.",
   "forWho": [
    "Marketing sites and blogs built as a Vite or Create React App SPA",
    "Stores and directories whose pages aren’t getting indexed",
@@ -330,13 +318,6 @@ export const REACT_SERVICES: ServicePage[] = [
    "See it in practice: this portfolio is a Next.js project",
    "/work/nextjs-portfolio-seo"
   ],
-  "terminal": [
-   "$ curl -s old-site.com/page | grep -c \"<h1\"",
-   "✗ 0 — the SPA ships an empty shell",
-   "$ npm run build  # Next.js",
-   "✓ page HTML now includes h1, text and links",
-   "✓ 301 map, sitemap and metadata in place"
-  ]
  },
  {
   "slug": "headless-wordpress-nextjs",
@@ -346,6 +327,7 @@ export const REACT_SERVICES: ServicePage[] = [
   "metaDescription": "Headless WordPress developer: keep the WordPress editor, get a fast Next.js front end with SEO, previews and structured data. Honest advice on when it fits.",
   "h1": "Headless WordPress with Next.js: Developer for Hire",
   "intro": "Headless WordPress keeps WordPress as the place where your team writes content, and uses Next.js to build the public website. I work with both, so I can tell you honestly whether headless WordPress with Next.js suits your project or whether a normal WordPress theme is the smarter choice.",
+  "firstCheck": "I’d check which WordPress plugins affect the front end and who will maintain the new app. If those costs outweigh the benefits, a normal theme is the better choice.",
   "forWho": [
    "Publishers who want WordPress editing with a faster, custom front end",
    "Businesses with a lot of existing WordPress content and a dated design",
@@ -438,13 +420,6 @@ export const REACT_SERVICES: ServicePage[] = [
    "nextjs-build-failed-on-vercel",
    "nextjs-hydration-failed-error-fix"
   ],
-  "terminal": [
-   "$ GET /wp-json/wp/v2/posts",
-   "✓ content arrives as JSON",
-   "$ npm run build",
-   "✓ posts pre-rendered as static HTML",
-   "✓ revalidate when an editor publishes"
-  ]
  }
 ];
 
@@ -453,12 +428,12 @@ export const REACT_POSTS: Post[] = [
   "slug": "nextjs-hydration-failed-error-fix",
   "title": "Next.js “Hydration failed” Error: Causes and Fixes (React 19)",
   "metaTitle": "Next.js “Hydration failed” Error: Causes & Fixes",
-  "description": "Fix the Next.js hydration failed error: why server and client HTML differ, with tested before and after examples for dates, window checks and invalid HTML.",
+  "description": "Fix the Next.js hydration failed error by finding why server and browser markup differ, with examples for dates, browser checks and invalid HTML.",
   "keyword": "Next.js hydration failed",
   "category": "Next.js Errors",
   "date": "2026-10-04",
   "updated": "2026-10-04",
-  "intro": "Hydration is the step where React attaches to the HTML the server already sent. If what React renders in the browser differs from that HTML, you get a hydration error. The fix is almost always the same idea: make the first client render identical to the server render.",
+  "intro": "A hydration error means React expected one thing in the browser and found different HTML from the server. The useful question is not just what warning appeared, but which value or markup changed between those two renders. These are the common causes and the least disruptive fixes to try first.",
   "sections": [
    {
     "h": "The error",
@@ -506,7 +481,7 @@ export const REACT_POSTS: Post[] = [
    {
     "h": "Fix 2: don’t branch on typeof window while rendering",
     "p": [
-     "A check like this looks harmless, but the server returns one string and the browser returns another. I reproduced the mismatch with a server render followed by a client hydrate."
+     "A check like this looks harmless, but the server and browser return different strings. Keep the first render the same, then read browser-only state after hydration."
     ],
     "codes": [
      {
@@ -582,12 +557,12 @@ export const REACT_POSTS: Post[] = [
   "slug": "nextjs-window-is-not-defined-fix",
   "title": "Next.js “window is not defined”: How to Fix It",
   "metaTitle": "Next.js “window is not defined” Error: Fixes",
-  "description": "Fix ReferenceError: window is not defined in Next.js: why it happens during server rendering and four fixes, tested with a production build.",
+  "description": "Fix ReferenceError: window is not defined in Next.js by moving browser-only code out of server rendering, with examples for effects and event handlers.",
   "keyword": "window is not defined Next.js",
   "category": "Next.js Errors",
   "date": "2026-10-04",
   "updated": "2026-10-04",
-  "intro": "Next.js runs your components on the server and at build time, where there is no window, document or localStorage. Touch one of them while rendering and the build stops. I reproduced the error and each fix below with a production build on Next.js 15 and React 19.",
+  "intro": "The error usually appears when a component reads window, document or localStorage before it reaches the browser. Next.js can render client components on the server too, so the fix is to move browser-only work to the point where the browser is available.",
   "sections": [
    {
     "h": "The error",
@@ -604,7 +579,7 @@ export const REACT_POSTS: Post[] = [
    {
     "h": "Why it happens",
     "p": [
-     "The common surprise is that adding \"use client\" does not stop this. Client components are still pre-rendered to HTML on the server, so code that reads window during render fails there too. My test component with \"use client\" failed the build exactly like a server component would."
+     "Adding \"use client\" does not make window available during rendering. Client components can still be pre-rendered to HTML on the server, so a browser API read in the render body can fail there too."
     ],
     "codes": [
      {
@@ -670,7 +645,7 @@ export const REACT_POSTS: Post[] = [
    {
     "h": "A trap: typeof window guards can cause hydration errors",
     "p": [
-     "Wrapping the code in typeof window !== \"undefined\" stops the crash, but if the output differs between server and browser you swap one error for another. I confirmed this produces a hydration mismatch. Use an effect with a mounted flag instead, as shown in the hydration guide."
+     "A typeof window check can avoid the crash but still produce different server and browser markup. Read browser-only values in an effect instead; the hydration guide explains why the first render needs to match."
     ]
    },
    {
@@ -692,12 +667,12 @@ export const REACT_POSTS: Post[] = [
   "slug": "nextjs-module-not-found-cant-resolve",
   "title": "Next.js “Module not found: Can’t resolve”: Causes and Fixes",
   "metaTitle": "Next.js “Module not found: Can't resolve” Fix",
-  "description": "Fix Module not found: Can't resolve in Next.js builds: case-sensitive names, wrong paths, missing packages, path aliases and server-only modules.",
+  "description": "Fix Module not found: Can't resolve in a Next.js build by checking file-name case, import paths, dependencies, aliases and server-only modules.",
   "keyword": "Module not found Can't resolve Next.js",
   "category": "Next.js Errors",
   "date": "2026-10-04",
   "updated": "2026-10-04",
-  "intro": "This error means the bundler can’t find the file or package you imported. It often appears only after you deploy, because your laptop and the build server resolve files differently. I reproduced every cause below on a Linux build with Next.js 15.",
+  "intro": "When a build says it can’t resolve an import, start with the exact name and path in the error. A file-name case mismatch can work on a Windows laptop and fail on a Linux build server; missing packages and aliases are other common culprits.",
   "sections": [
    {
     "h": "The error",
@@ -711,7 +686,7 @@ export const REACT_POSTS: Post[] = [
    {
     "h": "Cause 1: file name case doesn’t match",
     "p": [
-     "On macOS and Windows, header and Header usually point to the same file, so it works locally. On Linux, which Vercel and most CI systems use, they’re different files. My test with the file Header.tsx imported as ../components/header failed on Linux."
+     "Windows file systems are usually case-insensitive, so header and Header may appear to work locally. Linux build systems treat them as different names; match the import to the file exactly."
     ],
     "codes": [
      {
@@ -762,7 +737,7 @@ export const REACT_POSTS: Post[] = [
    {
     "h": "Cause 4: the @/ alias isn’t configured",
     "p": [
-     "The @/ prefix only works if tsconfig.json or jsconfig.json maps it. Without the mapping, I got “Can’t resolve '@/components/Reader'”."
+     "The @/ prefix only works if tsconfig.json or jsconfig.json maps it. If the alias is missing or points at the wrong folder, the bundler cannot resolve the import."
     ],
     "codes": [
      {
@@ -817,12 +792,12 @@ export const REACT_POSTS: Post[] = [
   "slug": "react-too-many-re-renders-error-fix",
   "title": "React “Too many re-renders” Error: Causes and Fixes",
   "metaTitle": "React “Too many re-renders” Error: How to Fix It",
-  "description": "Fix React’s Too many re-renders error: setState in the render body, event handlers called immediately and effect loops, with tested fixes.",
+  "description": "Fix React’s Too many re-renders error by checking render-time state updates, event handlers that run immediately and effect dependency loops.",
   "keyword": "React too many re-renders",
   "category": "React Errors",
   "date": "2026-10-04",
   "updated": "2026-10-04",
-  "intro": "React re-renders a component whenever its state changes. If your code changes state while rendering, React keeps rendering until it gives up. Both main causes below are tested on React 19.",
+  "intro": "React is warning that a render keeps triggering another state update. The first places to check are a setter in the component body, a handler being called instead of passed, and an effect that updates one of its own dependencies.",
   "sections": [
    {
     "h": "The error",
@@ -931,7 +906,7 @@ export const REACT_POSTS: Post[] = [
      }
     ],
     "after": [
-     "Read the log from the first error, not the last line. Later errors are usually fallout. In my tests, several problems that dev mode ignored failed immediately here."
+     "Read from the first error, not the last line. Later messages are often fallout; the first failure usually points to the file or build step that needs attention."
     ]
    },
    {
@@ -983,13 +958,16 @@ export const REACT_POSTS: Post[] = [
    {
     "h": "Cause 5: build-time fetches that fail",
     "p": [
-     "Statically generated pages call your API during the build. If the API is down, private or slow, the build fails. Handle errors so one bad response doesn’t stop the deployment."
+      "Statically generated pages call your API during the build. If the API is down or the response is not successful, the build should make that failure visible. Decide deliberately whether the content is required or whether the page has a safe, explicit fallback."
     ],
     "codes": [
      {
-      "label": "Safer fetch",
-      "code": "async function getPosts() {\n  try {\n    const res = await fetch(`${process.env.API_URL}/posts`);\n    if (!res.ok) return [];\n    return await res.json();\n  } catch {\n    return [];\n  }\n}"
+      "label": "Fetch with an explicit failure",
+      "code": "async function getPosts() {\n  const res = await fetch(`${process.env.API_URL}/posts`);\n  if (!res.ok) {\n    throw new Error(`Posts request failed: ${res.status}`);\n  }\n  return res.json();\n}"
      }
+    ],
+    "after": [
+     "If posts are optional, handle that at the page boundary and log the failure so an API outage does not look like a successful empty result."
     ]
    },
    {

@@ -58,7 +58,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             ))}
             <aside className="glass cta-box">
               <h2 className="h3">Need this fixed for you?</h2>
-              <p>I handle this kind of work as a full stack WordPress developer. See how I can help with <Link href={`/services/${svc.slug}`}>{svc.name.toLowerCase()}</Link>, or <Link href="/hire">send me the details</Link>.</p>
+              <p>Working through something similar? See my <Link href={`/services/${svc.slug}`}>{svc.name.toLowerCase()}</Link> service, or <Link href="/hire#contact">send me the details</Link> and I’ll tell you where I’d start.</p>
             </aside>
           </div>
           <aside className="toc" aria-label="Table of contents">

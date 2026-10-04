@@ -7,7 +7,7 @@ export default function BlogPreview() {
     <section id="blog" aria-labelledby="blog-h">
       <div className="w">
         <div className="c"><span className="pill">From the blog</span><h2 id="blog-h">Fixes, <em>checklists</em> &amp; guides</h2>
-          <p className="lead">Practical WordPress and WooCommerce troubleshooting, written from real project work.</p></div>
+          <p className="lead">Short, practical notes for the next time a WordPress or WooCommerce site acts up.</p></div>
         <div className="pcs">
           {POSTS.map((p) => (
             <article key={p.slug} className="glass pc rv">

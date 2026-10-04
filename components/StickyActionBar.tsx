@@ -28,7 +28,7 @@ export default function StickyActionBar() {
     <nav className={`mobile-actions${visible ? " is-visible" : ""}`} aria-label="Quick contact">
       <a href={SITE.phoneHref}>Call</a>
       <a href={SITE.whatsapp} target="_blank" rel="noopener">WhatsApp</a>
-      <a href={`mailto:${SITE.email}`}>Email</a>
+      <a href="/hire#contact">Project</a>
     </nav>
   );
 }

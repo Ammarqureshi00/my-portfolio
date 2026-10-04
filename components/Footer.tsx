@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="ft-grid">
           <div className="ft-brand">
             <div className="logo"><b>A</b>AMMAR QURESHI</div>
-            <p>Full Stack WordPress Developer. I build blogs, WooCommerce stores and Next.js sites, and fix the plugin and theme problems that slow them down.</p>
+            <p>I build WordPress and WooCommerce sites, fix the problems slowing them down, and use React or Next.js when the project needs a custom front end.</p>
             {/* <ul className="ft-social" aria-label="Social links">
               {SOCIALS.filter((s) => ["linkedin", "github", "instagram", "whatsapp"].includes(s.key)).map((s) => (
                 <li key={s.key}><a href={s.href} target="_blank" rel="me noopener" aria-label={s.label}><Icon name={s.key} /></a></li>
@@ -27,7 +27,7 @@ export default function Footer() {
               <li><Link href="/#work">Work</Link></li>
               <li><Link href="/work/nextjs-portfolio-seo">Case study</Link></li>
               <li><Link href="/blog">Blog</Link></li>
-              <li><Link href="/hire">Hire me</Link></li>
+              <li><Link href="/hire#contact">Start a project</Link></li>
             </ul></nav>
           <div><h2 className="ft-h">Get in touch</h2>
             <ul className="ft-contact">

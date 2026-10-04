@@ -27,7 +27,7 @@ export default function Header() {
           <div className={`lk${open ? " o" : ""}`} id="lk" onClick={(e) => (e.target as HTMLElement).closest("a") && setOpen(false)}>
             {LINKS.map(([l, h]) => <Link key={h} href={h}>{l}</Link>)}
             <ThemeToggle />
-            <Link className="btn p" href="/hire" data-track="header_hire">Hire Me →</Link>
+            <Link className="btn p" href="/hire#contact" data-track="header_hire">Start a project →</Link>
           </div>
         </nav>
       </div>

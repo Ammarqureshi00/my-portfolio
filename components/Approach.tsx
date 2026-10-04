@@ -6,8 +6,8 @@ export default function Approach() {
       <div className="w">
         <div className="c">
           <span className="pill">Approach</span>
-          <h2 id="approach-h">More than <em>code</em></h2>
-          <p className="lead">A process that starts with the business and ends with a polished, fast experience.</p>
+          <h2 id="approach-h">A clear route from <em>problem to launch</em></h2>
+          <p className="lead">We start with what you need, agree the useful scope, then keep the work and the next step easy to follow.</p>
         </div>
         <ol className="pr">
           {APPROACH.map(([t, d], i) => (

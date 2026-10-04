@@ -2,7 +2,7 @@ import Link from "next/link";
 import { SERVICE_PAGES } from "@/lib/content";
 import "@/app/pages.css";
 
-const MORE = ["Laravel & Node.js APIs", "Technical SEO", "Shopify & Liquid", "AI & automation"];
+const MORE = ["Laravel & Node.js APIs", "Technical SEO", "Shopify & Liquid", "APIs & workflow automation"];
 
 export default function ServicesPreview() {
   return (

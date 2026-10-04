@@ -61,7 +61,7 @@ export default function CaseStudy() {
         )}
         <aside className="glass cta-box">
           <h2 className="h3">Want this for your site?</h2>
-          <p>See <Link href="/services/nextjs-development">Next.js development</Link>, or if you already have a React app, <Link href="/services/react-to-nextjs-migration">converting it to Next.js for SEO</Link>. You can also <Link href="/hire">get in touch</Link>.</p>
+          <p>See <Link href="/services/nextjs-development">Next.js development</Link>, or if you already have a React app, <Link href="/services/react-to-nextjs-migration">converting it to Next.js for SEO</Link>. You can also <Link href="/hire#contact">send me your project details</Link>.</p>
         </aside>
       </div></section>
     </PageShell>

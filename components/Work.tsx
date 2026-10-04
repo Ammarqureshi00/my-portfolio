@@ -11,7 +11,7 @@ export default function Work() {
         <div className="c">
           <span className="pill">Selected Work</span>
           <h2 id="work-h">Selected <em>Work</em></h2>
-          <p className="lead">A selection of websites, storefronts and digital experiences I&apos;ve worked on.</p>
+          <p className="lead">A few live projects across websites, online stores and custom interfaces. Open one to see it in context.</p>
         </div>
         <div className="tabs" role="group" aria-label="Filter projects">
           {TABS.map((t) => (
@@ -30,7 +30,7 @@ export default function Work() {
                 </a>
                 <div className="pb">
                   <h3>{p.name}<span>0{i + 1}</span></h3>
-                  <p><strong>What it is:</strong> {p.description}</p>
+                  <p>{p.description}</p>
                   {p.role && <p><strong>My role:</strong> {p.role}</p>}
                   {p.results?.length ? <p><strong>Results:</strong> {p.results.join(" · ")}</p> : null}
                   <div className="tg">{p.kind} · {p.tech}</div>

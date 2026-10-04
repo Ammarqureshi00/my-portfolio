@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import PageShell from "@/components/PageShell";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Schema from "@/components/Schema";
-import Terminal from "@/components/Terminal";
 import { SERVICE_PAGES, getService, getPost } from "@/lib/content";
 import { SITE } from "@/lib/site";
 import { buildMetadata, crumbsSchema } from "@/lib/seo";
@@ -17,8 +16,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!s) return {};
   return buildMetadata({ title: s.metaTitle, description: s.metaDescription, path: `/services/${s.slug}` });
 }
-
-const TERM = ["$ wp plugin deactivate --all", "Success: Deactivated all plugins.", "$ wp theme activate twentytwentyfive", "✗ problem still there? theme is the cause", "✓ problem gone? reactivate in halves", "✓ culprit isolated on staging", "✓ fixed, tested, documented"];
 
 export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
   const s = getService((await params).slug);
@@ -37,12 +34,17 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <section className="ph"><div className="w ph2">
         <div>
           <Breadcrumbs items={crumbs} />
-          <span className="pill">Full Stack WordPress Developer</span>
+          <span className="pill">Work directly with Ammar</span>
           <h1>{s.h1}</h1>
           <p className="lead">{s.intro}</p>
-          <div className="cta"><Link className="btn g" href="/hire" data-track={`quote_${s.slug}`}>Get a quote →</Link><a className="btn" href="#faq">Read the FAQ</a></div>
+          <div className="cta"><Link className="btn g" href="/hire#contact" data-track={`quote_${s.slug}`}>Tell me what you need →</Link><a className="btn" href="#faq">Read the FAQ</a></div>
         </div>
-        <Terminal lines={s.terminal ?? TERM} />
+        <aside className="glass service-start rv">
+          <span className="service-start-kicker">01 / FIRST LOOK</span>
+          <h2 className="h3">Where I&apos;d start</h2>
+          <p>{s.firstCheck}</p>
+          <Link className="more" href="#included">See what&apos;s included →</Link>
+        </aside>
       </div></section>
 
       <section><div className="w two">
@@ -58,7 +60,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         )}
       </div></section>
 
-      <section><div className="w">
+      <section id="included"><div className="w">
         <div className="c"><span className="pill">What’s included</span><h2>What you <em>get</em></h2></div>
         <ul className="sv inc">{s.included.map(([t, d], i) => <li key={t} className="glass rv"><span className="n">0{i + 1}</span><h3>{t}</h3><p>{d}</p></li>)}</ul>
       </div></section>
@@ -86,9 +88,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       </div></section>
 
       <section className="hb"><div className="w c">
-        <h2>Ready to fix it <em>properly?</em></h2>
-        <p className="lead">Send me the details and I’ll reply with next steps and a clear quote.</p>
-        <div className="cta" style={{ justifyContent: "center" }}><Link className="btn g" href="/hire" data-track={`bottom_hire_${s.slug}`}>Hire me →</Link></div>
+        <h2>Want to talk through <em>your project?</em></h2>
+        <p className="lead">Send me the link and the short version. I’ll tell you what I’d look at next.</p>
+        <div className="cta" style={{ justifyContent: "center" }}><Link className="btn g" href="/hire#contact" data-track={`bottom_hire_${s.slug}`}>Send a project note →</Link></div>
       </div></section>
     </PageShell>
   );

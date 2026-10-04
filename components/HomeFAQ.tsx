@@ -1,27 +1,27 @@
 const HOME_FAQS = [
   {
-    question: "What services do you offer?",
-    answer: "I work on WordPress and WooCommerce sites, Shopify storefronts, React and Next.js interfaces, backend APIs, performance, technical SEO, and workflow automation.",
+    question: "What kind of work can I bring you?",
+    answer: "WordPress or WooCommerce builds and fixes are a big part of my work. I also take on Shopify changes, React or Next.js interfaces, and the performance or integration issues around them. If you’re not sure which category fits, just describe what you need.",
   },
   {
-    question: "How does a project start?",
-    answer: "Share the site or project brief, what you want to change, and any constraints. I’ll clarify the scope, outline the proposed work and quote, and confirm the plan with you before starting.",
+    question: "What should I send in the first message?",
+    answer: "A website link and a sentence about what is happening—or what you want to build—is enough to start. Screenshots, error messages, a deadline or a rough budget can help, but you don’t need a polished brief.",
   },
   {
-    question: "How long will my project take?",
-    answer: "Timing depends on scope, content readiness, and third-party dependencies. I’ll include a project-specific timeline in the agreed scope rather than promise a generic turnaround.",
+    question: "Can you give me a timeline or price straight away?",
+    answer: "I’ll need to understand the pages, problem and any integrations first. Once the scope is clear, I’ll send a project-specific estimate and timeline before any work begins.",
   },
   {
-    question: "How do revisions work?",
-    answer: "The included review and revision rounds are agreed in writing before work starts. Changes beyond that scope can be discussed before they are added.",
+    question: "Will you rebuild my whole site?",
+    answer: "Not unless that is the best answer. I’ll look at what is already working, explain the options and recommend the smallest sensible change first.",
   },
   {
-    question: "Do you provide support after launch?",
-    answer: "Post-launch support can be included in the project scope or arranged separately. Mention the kind of help you expect when you get in touch so it can be accounted for up front.",
+    question: "Can you work on a live site safely?",
+    answer: "For fixes and larger changes, I use a backup and staging copy where the setup allows it. We agree how to test and launch the change before anything goes on the live site.",
   },
   {
-    question: "How do payment and communication work?",
-    answer: "Payment milestones, communication channels, and update cadence are agreed as part of the project scope before work begins.",
+    question: "What if you’re not the right person for the job?",
+    answer: "I’ll tell you. Send me the details and I’ll be clear about what I can take on, what needs another specialist, or what I’d need to check before giving you an answer.",
   },
 ];
 
@@ -31,8 +31,8 @@ export default function HomeFAQ() {
       <div className="w nar">
         <div className="c faq-head">
           <span className="pill">FAQ</span>
-          <h2 id="home-faq-h">Common <em>questions</em></h2>
-          <p className="lead">Clear answers about scope, timing, communication and what to expect when we work together.</p>
+          <h2 id="home-faq-h">Before you <em>get in touch</em></h2>
+          <p className="lead">A few straight answers to the questions people usually have before starting a project.</p>
         </div>
         <div className="home-faq-list">
           {HOME_FAQS.map(({ question, answer }, index) => (
