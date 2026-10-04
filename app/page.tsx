@@ -22,8 +22,8 @@ export default function Home() {
       <Header />
       <main id="top" className="mobile-actions-space">
         <Hero />
-        <Toolbox />
         <Work />
+        <Toolbox />
         <WhyWork />
         <About />
         <Services />

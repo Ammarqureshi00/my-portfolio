@@ -11,7 +11,7 @@ export default function Approach() {
         </div>
         <ol className="pr">
           {APPROACH.map(([t, d], i) => (
-            <li key={t} className="glass rv"><b>{i + 1}</b><h3>{t}</h3><p>{d}</p></li>
+            <li key={t} className="rv"><span className="pr-number">{String(i + 1).padStart(2, "0")}</span><h3>{t}</h3><p>{d}</p></li>
           ))}
         </ol>
         <div className="wy">{WHY.map((x) => <span key={x}>{x}</span>)}</div>

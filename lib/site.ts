@@ -46,8 +46,6 @@ export const TOOLS: { title: string; tiles: string[]; stack: string; blurb: stri
   { title: "Automation & integrations", tiles: ["APIs", "n8n", "Flows"], stack: "APIs, n8n, workflow automation", blurb: "Useful connections between the tools you already rely on—without adding complexity for its own sake." },
 ];
 
-export const ORBIT = ["React", "WordPress", "Shopify", "Node", "Laravel", "PHP"];
-
 export type Project = {
   name: string;
   slug: string;
