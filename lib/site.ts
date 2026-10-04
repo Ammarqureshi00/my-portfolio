@@ -5,10 +5,15 @@ export const SITE = {
   description:
     "Full-stack web developer specializing in WordPress, Shopify, modern frontend development, performance optimization and custom web experiences.",
   url: (process.env.NEXT_PUBLIC_SITE_URL || "https://www.your-domain.com").replace(/\/$/, ""),
-  email: process.env.NEXT_PUBLIC_EMAIL || "",
-  linkedin: process.env.NEXT_PUBLIC_LINKEDIN || "",
-  github: process.env.NEXT_PUBLIC_GITHUB || "",
-  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || "",
+  email: process.env.NEXT_PUBLIC_EMAIL || "ammar.techmail@gmail.com",
+  phone: process.env.NEXT_PUBLIC_PHONE || "+92 329 7727245",
+  phoneHref: process.env.NEXT_PUBLIC_PHONE_HREF || "tel:+923297727245",
+  linkedin: process.env.NEXT_PUBLIC_LINKEDIN || "https://www.linkedin.com/in/ammarqureshi099/",
+  github: process.env.NEXT_PUBLIC_GITHUB || "https://github.com/Ammarqureshi00",
+  instagram: process.env.NEXT_PUBLIC_INSTAGRAM || "https://www.instagram.com/ez.scripts/",
+  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || "https://wa.me/923297727245",
+  resumeUrl: process.env.NEXT_PUBLIC_RESUME_URL || "",
+  responseTime: process.env.NEXT_PUBLIC_RESPONSE_TIME || "",
   keywords: [
     "Ammar Qureshi",
     "full-stack web developer",
@@ -26,9 +31,11 @@ export const SITE = {
 
 export const contactLinks = [
   { label: "Email", href: SITE.email ? `mailto:${SITE.email}` : "", text: SITE.email },
+  { label: "Phone", href: SITE.phoneHref, text: SITE.phone },
+  { label: "WhatsApp", href: SITE.whatsapp, text: SITE.phone },
   { label: "LinkedIn", href: SITE.linkedin, text: "" },
   { label: "GitHub", href: SITE.github, text: "" },
-  { label: "WhatsApp", href: SITE.whatsapp, text: "" },
+  { label: "Instagram", href: SITE.instagram, text: "" },
 ].filter((l) => l.href);
 
 export const TOOLS: { title: string; tiles: string[]; stack: string; blurb: string; wide?: boolean }[] = [
@@ -51,9 +58,13 @@ export type Project = {
   description: string;
   image: string;
   alt: string;
+  role?: string;
+  caseStudyPath?: string;
+  results?: string[];
 };
 
 export const PROJECTS: Project[] = [
+  { name: "Top Edge Admin Dashboard", slug: "top-edge-admin-dashboard", categories: ["React", "Frontend", "Custom Development"], url: "https://topedgetechnologies.com/admin/", tech: "React.js · Dashboard UI", kind: "Admin dashboard", description: "A modern admin portal for publishing events, jobs, projects and content with analytics, content management workflows and a clean operations dashboard.", image: "/projects/tet-dashboard.webp", alt: "Top Edge Technologies admin dashboard — overview of content, analytics and operations" },
   { name: "Remote IT Jobs", slug: "remote-it-jobs", categories: ["WordPress", "Frontend", "Custom Development"], url: "https://remoteitjobs.us/", tech: "WordPress · Custom Development", kind: "Job platform", description: "A remote-focused job listings website for IT professionals, with job search, filters, career guides and a salary report.", image: "/projects/remote-it-jobs.webp", alt: "Remote IT Jobs website — remote job board homepage with search and job listings" },
   { name: "Top Edge Technologies", slug: "top-edge-technologies", categories: ["React", "Frontend", "Custom Development"], url: "https://topedgetechnologies.com/", tech: "React.js · Custom Development", kind: "Software company website", description: "A modern React-based website for a software and digital agency, presenting services, featured projects, awards and the team.", image: "/projects/top-edge-technologies.webp", alt: "Top Edge Technologies website — React-built software company homepage" },
   { name: "Hexura", slug: "hexura", categories: ["Shopify", "E-commerce", "Frontend"], url: "https://hexura.shop/", tech: "E-commerce · Shopify", kind: "E-commerce storefront", description: "A Shopify store with department-based collections and a clean shopping journey from product discovery to checkout.", image: "/projects/hexura.webp", alt: "Hexura Shopify store homepage with product collections and categories" },

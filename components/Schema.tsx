@@ -1,8 +1,9 @@
 import { SITE } from "@/lib/site";
+import { CONTACT, SAME_AS } from "@/lib/social";
 
 /** Outputs a JSON-LD @graph. The Person node is included so every page resolves the `#person` @id on its own. */
 export default function Schema({ data }: { data: object | object[] }) {
-  const person = { "@type": "Person", "@id": `${SITE.url}/#person`, name: SITE.name, url: SITE.url, jobTitle: SITE.jobTitle };
+  const person = { "@type": "Person", "@id": `${SITE.url}/#person`, name: SITE.name, url: SITE.url, jobTitle: SITE.jobTitle, email: `mailto:${CONTACT.email}`, telephone: CONTACT.phoneTel, sameAs: SAME_AS };
   const graph = [...(Array.isArray(data) ? data : [data]), person];
   return (
     <script

@@ -30,3 +30,9 @@ Check Realtime while testing. Do not send names, emails or other personal data a
 ## 5. After 2-4 weeks
 Search Console -> Performance: see queries with impressions, then write the next post for those topics.
 Pages report: check anything "Crawled, currently not indexed" and improve that page's content.
+
+## Consent (already built in)
+The site starts with analytics storage DENIED (Google Consent Mode v2) and only grants it after the visitor presses Accept.
+Test it: open the site in a private window, check Application -> Cookies (no _ga cookie yet), press Accept, reload, and the _ga cookies appear.
+The Google tag in Tag Manager respects these consent signals automatically. If you ever add AdSense or other ads, use a Google-certified consent tool
+(for example AdSense's Privacy & messaging) for visitors in the EEA, UK and Switzerland.

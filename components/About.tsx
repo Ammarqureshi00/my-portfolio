@@ -1,4 +1,7 @@
+import Link from "next/link";
 import { ORBIT } from "@/lib/site";
+
+const HOW = ["Staging first, never your live site", "Plain-language updates", "Speed and SEO built in", "Clean, maintainable code"];
 
 export default function About() {
   return (
@@ -6,10 +9,15 @@ export default function About() {
       <div className="w ab">
         <div>
           <span className="pill">About</span>
-          <h2 id="about-h">From the layer people see to <em>the systems</em> that run it</h2>
-          <p>I work across <strong>design, frontend, CMS, backend, performance, e-commerce and automation</strong> — so a project can move from first layout to final speed audit without being handed between specialists.</p>
-          <p>WordPress and Shopify are where much of my work happens: custom themes and plugins, Liquid sections, WooCommerce and Elementor builds. Alongside them I build with React, PHP, Laravel and Node.js when a project needs something more custom.</p>
-          <p>I care about the details visitors feel without noticing: how fast a page settles, how a form behaves on a small screen, how easily a client can edit their own content.</p>
+          <h2 id="about-h">WordPress built right, <em>problems</em> fixed fast</h2>
+          <p>I&apos;m Ammar Qureshi, a <strong>full stack WordPress developer</strong>. I build blogs, business sites and WooCommerce stores, and I&apos;m the person people call when a plugin conflict, a broken theme update or a slow page is costing them visitors.</p>
+          <p>Because I work across the whole stack, from <strong>WordPress and Shopify to React, Next.js, Laravel and Node.js</strong>, I can usually trace a problem to its real cause instead of patching the symptom. A slow blog might be an oversized image, a heavy plugin or a bad caching rule. I find out which one it is and fix that.</p>
+          <p>My approach is simple: understand the business first, work on a safe copy, change only what&apos;s needed and explain what I did in plain language. You end up with a site that&apos;s faster, easier to edit and properly set up for search, not a pile of fixes you can&apos;t maintain.</p>
+          <div className="wy" style={{ marginTop: 24 }}>{HOW.map((h) => <span key={h}>{h}</span>)}</div>
+          <div className="cta" style={{ marginTop: 28 }}>
+            <Link className="btn g" href="/hire">Hire me →</Link>
+            <a className="btn" href="#work">See my work</a>
+          </div>
         </div>
         <div className="orb rv" aria-hidden="true">
           <i style={{ "--i": "0%" } as React.CSSProperties} />

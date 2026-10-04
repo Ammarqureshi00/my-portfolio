@@ -1,7 +1,8 @@
 import { SITE, PROJECTS, SERVICES } from "@/lib/site";
+import { CONTACT, SAME_AS } from "@/lib/social";
 
 export default function JsonLd() {
-  const sameAs = [SITE.linkedin, SITE.github].filter(Boolean);
+  const sameAs = SAME_AS;
   const graph = [
     {
       "@type": "WebSite",
@@ -19,6 +20,8 @@ export default function JsonLd() {
       url: SITE.url,
       image: `${SITE.url}/ammar-qureshi.jpg`,
       jobTitle: SITE.jobTitle,
+      email: `mailto:${CONTACT.email}`,
+      telephone: CONTACT.phoneTel,
       description: SITE.description,
       knowsAbout: ["WordPress", "Shopify", "Liquid", "WooCommerce", "Elementor", "React", "JavaScript", "PHP", "Laravel", "Node.js", "Express.js", "Technical SEO", "Core Web Vitals", "Workflow automation"],
       ...(sameAs.length ? { sameAs } : {}),

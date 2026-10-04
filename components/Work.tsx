@@ -21,17 +21,21 @@ export default function Work() {
         <div className={`wk${filter !== "All" ? " f" : ""}`} aria-live="polite">
           {PROJECTS.map((p, i) => {
             const hide = filter !== "All" && !p.categories.includes(filter);
-            const host = new URL(p.url).host;
+            const projectUrl = new URL(p.url);
+            const projectLink = projectUrl.host + (projectUrl.pathname === "/" ? "" : projectUrl.pathname.replace(/\/$/, ""));
             return (
               <article key={p.name} className={`glass pj rv${hide ? " hide" : ""}`}>
                 <a href={p.url} target="_blank" rel="noopener" aria-label={`${p.name} — view live site`}>
-                  <div className="sh"><Image src={p.image} alt={p.alt} fill sizes="(max-width:768px) 100vw, 560px" quality={80} /><span>{host}</span></div>
+                  <div className="sh"><Image src={p.image} alt={p.alt} fill sizes="(max-width:768px) 100vw, 560px" quality={80} /><span>{projectLink}</span></div>
                 </a>
                 <div className="pb">
                   <h3>{p.name}<span>0{i + 1}</span></h3>
-                  <p>{p.description}</p>
+                  <p><strong>What it is:</strong> {p.description}</p>
+                  {p.role && <p><strong>My role:</strong> {p.role}</p>}
+                  {p.results?.length ? <p><strong>Results:</strong> {p.results.join(" · ")}</p> : null}
                   <div className="tg">{p.kind} · {p.tech}</div>
                   <a href={p.url} target="_blank" rel="noopener">View Project ↗</a>
+                  {p.caseStudyPath && <a href={p.caseStudyPath}>View case study →</a>}
                 </div>
               </article>
             );

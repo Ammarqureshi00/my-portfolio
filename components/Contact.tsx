@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
-import { SITE, contactLinks } from "@/lib/site";
+import { CONTACT, SOCIALS } from "@/lib/social";
+import Icon from "@/components/Icon";
 import { track } from "@/lib/analytics";
 
 const TYPES = ["WordPress website", "Shopify storefront", "Frontend / React", "Backend / API", "Performance & SEO", "Automation", "Something else"];
@@ -14,9 +15,8 @@ export default function Contact() {
     const d = new FormData(f);
     const name = String(d.get("name") || ""), email = String(d.get("email") || ""), type = String(d.get("type") || ""), message = String(d.get("message") || "");
     if (!name || !f.email.validity.valid || !message) return setStatus("Please complete name, a valid email and message.");
-    if (!SITE.email) return setStatus("Contact email isn't configured yet — set NEXT_PUBLIC_EMAIL.");
     track("generate_lead", { form_name: "contact", project_type: type, page_path: window.location.pathname });
-    window.location.href = `mailto:${SITE.email}?subject=${encodeURIComponent(`${type} — ${name}`)}&body=${encodeURIComponent(`${message}\n\n${name} (${email})`)}`;
+    window.location.href = `mailto:${CONTACT.email}?subject=${encodeURIComponent(`${type} — ${name}`)}&body=${encodeURIComponent(`${message}\n\n${name} (${email})`)}`;
     setStatus("Opening your email app…");
   }
 
@@ -29,9 +29,9 @@ export default function Contact() {
             <h2 id="contact-h">Have a project <em>in mind?</em></h2>
             <p className="lead">Whether you need a custom WordPress website, Shopify storefront, modern frontend experience or technical optimization, let&apos;s talk.</p>
             <div className="ch">
-              {contactLinks.map((s) => (
-                <a key={s.label} href={s.href} {...(s.label === "Email" ? {} : { target: "_blank", rel: "noopener" })}>
-                  <span>{s.label}</span><span>{s.text || "↗"}</span>
+              {SOCIALS.map((c) => (
+                <a key={c.key} href={c.href} {...(c.external ? { target: "_blank", rel: "noopener" } : {})}>
+                  <span style={{ display: "inline-flex", alignItems: "center", gap: 10 }}><Icon name={c.key} />{c.label}</span><span>{c.text}</span>
                 </a>
               ))}
             </div>
