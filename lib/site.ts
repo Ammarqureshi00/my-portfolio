@@ -38,6 +38,8 @@ export const contactLinks = [
   { label: "Instagram", href: SITE.instagram, text: "" },
 ].filter((l) => l.href);
 
+export const ORBIT = ["React", "WordPress", "Shopify", "Node", "Laravel", "PHP"];
+
 export const TOOLS: { title: string; tiles: string[]; stack: string; blurb: string; wide?: boolean }[] = [
   { title: "Frontend", tiles: ["HTML", "CSS", "JS", "React"], stack: "JavaScript, React, HTML, CSS", blurb: "Interfaces that feel clear on a phone, not just in a design file.", wide: true },
   { title: "CMS & Commerce", tiles: ["WP", "Elementor", "Woo", "Liquid"], stack: "WordPress, Elementor, WooCommerce, Shopify", blurb: "Sites and storefronts your team can update without calling me for every edit." },
