@@ -1,9 +1,9 @@
 /** Single source of truth for contact + social links. Env vars can override the defaults. */
 export const CONTACT = {
   email: process.env.NEXT_PUBLIC_EMAIL || "ammar.techmail@gmail.com",
-  phoneDisplay: "+92 329 7727245",
-  phoneTel: "+923297727245",
-  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || "https://wa.me/923297727245",
+  phoneDisplay: "+92 329 7737245",
+  phoneTel: "+923297737245",
+  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || "https://wa.me/923297737245",
   linkedin: process.env.NEXT_PUBLIC_LINKEDIN || "https://www.linkedin.com/in/ammarqureshi099/",
   github: process.env.NEXT_PUBLIC_GITHUB || "https://github.com/Ammarqureshi00",
   instagram: process.env.NEXT_PUBLIC_INSTAGRAM || "https://www.instagram.com/ez.scripts/",

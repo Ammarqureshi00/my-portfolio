@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { SITE } from "@/lib/site";
+import Icon from "@/components/Icon";
 
 export default function StickyActionBar() {
   const [visible, setVisible] = useState(false);
@@ -25,10 +26,16 @@ export default function StickyActionBar() {
   }, []);
 
   return (
-    <nav className={`mobile-actions${visible ? " is-visible" : ""}`} aria-label="Quick contact">
-      <a href={SITE.phoneHref}>Call</a>
-      <a href={SITE.whatsapp} target="_blank" rel="noopener">WhatsApp</a>
-      <a href="/hire#contact">Project</a>
-    </nav>
+    <>
+      <a className="whatsapp-float" href={SITE.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="Message me on WhatsApp">
+        <Icon name="whatsapp" size={17} />
+        <span>WhatsApp</span>
+      </a>
+      <nav className={`mobile-actions${visible ? " is-visible" : ""}`} aria-label="Quick contact">
+        <a href={SITE.phoneHref}>Call</a>
+        <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="/hire#contact">Project</a>
+      </nav>
+    </>
   );
 }

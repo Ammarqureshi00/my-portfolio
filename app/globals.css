@@ -117,9 +117,12 @@ footer{border-top:1px solid var(--ln);padding:48px 0 32px}.fg{display:flex;justi
 .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px;margin-top:40px}.testimonial{padding:26px}.testimonial blockquote{font:italic 18px/1.6 var(--ser);color:var(--prose)}.testimonial figcaption{display:grid;gap:2px;margin-top:20px;font-size:14px;font-weight:600}.testimonial figcaption span{font-size:12px;font-weight:400;color:var(--t2)}.testimonial figcaption a{color:var(--g)}
 .about-skills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:32px}.about-skills span{border:1px solid var(--ln);background:var(--gl);border-radius:99px;padding:8px 14px;color:var(--t2);font-size:13px}.about-tools{margin-top:32px}.about-tools li{padding:24px}.about-tools h3{font-size:20px;margin-bottom:10px}.about-tools p{font-size:14px;color:var(--t2)}
 .mobile-actions{display:none}
+.whatsapp-float{position:fixed;right:clamp(16px,3vw,40px);bottom:24px;z-index:49;display:inline-flex;align-items:center;gap:7px;min-height:42px;padding:0 14px;border:1px solid var(--g-line);border-radius:999px;background:var(--g);color:var(--accent-ink);font-size:13px;font-weight:600;box-shadow:0 8px 24px -14px var(--g-glow);transition:transform .2s var(--e),box-shadow .2s}
+.whatsapp-float:hover,.whatsapp-float:focus-visible{transform:translateY(-2px);box-shadow:0 10px 28px -12px var(--g-glow)}
 @media(max-width:1024px){.pr{grid-template-columns:repeat(3,1fr)}.sv{grid-template-columns:1fr 1fr}}
 @media(max-width:1024px){.why-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:768px){
+.whatsapp-float{display:none}
 .mb{display:block}.lk{position:fixed;inset:68px 0 auto;background:var(--bg);flex-direction:column;align-items:stretch;gap:0;padding:8px var(--pad) 24px;border-bottom:1px solid var(--ln);opacity:0;visibility:hidden;transform:translateY(-8px);transition:.3s;font-size:18px}.lk.o{opacity:1;visibility:visible;transform:none}.lk a{padding:16px 0;border-bottom:1px solid var(--ln)}.lk .theme-toggle{align-self:flex-start;margin:10px 0}.lk .btn{margin-top:16px;justify-content:center;border-bottom:1px solid transparent}
 .hero{padding-top:96px}.hg,.ab,.ct{grid-template-columns:1fr}.pt{order:-1;width:min(100%,340px)}.fc{left:0;bottom:-24px}.tag{right:12px}
 .cta .btn,.hero-actions .btn{flex:1 1 100%;justify-content:center;min-height:52px}.stats{gap:18px}.stats strong{font-size:28px}
