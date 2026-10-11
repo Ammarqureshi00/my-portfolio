@@ -44,7 +44,6 @@ export default function ThemeToggle() {
       <svg className="theme-moon" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.6 8.6 0 1 0 20.5 14.2Z" />
       </svg>
-      <span>Theme</span>
     </button>
   );
 }
