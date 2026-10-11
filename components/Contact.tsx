@@ -55,7 +55,7 @@ export default function Contact() {
             <label>Email<input name="email" type="email" autoComplete="email" required /></label>
             <label>What do you need?<select name="type">{TYPES.map((t) => <option key={t}>{t}</option>)}</select></label>
             <label>Message<textarea name="message" placeholder="A website link, what is happening, and what you want to happen instead…" required /></label>
-            <button className="btn g" style={{ justifySelf: "start" }} type="submit">Continue in email →</button>
+            <button className="btn g contact-submit" type="submit">Continue in email →</button>
             <p className="form-note">This opens an email draft with your message; it is only sent when you press Send. Prefer WhatsApp? <a href={CONTACT.whatsapp} target="_blank" rel="noopener">Message me there</a>.</p>
             <p id="fs" role="status">{status}</p>
           </form>
