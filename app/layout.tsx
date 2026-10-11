@@ -1,20 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import localFont from "next/font/local";
-import { Instrument_Serif } from "next/font/google";
+import { Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
 import { SITE } from "@/lib/site";
 import SiteLoadingGate from "@/components/SiteLoadingGate";
 import "./globals.css";
 
-const sans = localFont({
-  src: [
-    { path: "./fonts/Satoshi-Regular.woff2", weight: "400" },
-    { path: "./fonts/Satoshi-Medium.woff2", weight: "500" },
-    { path: "./fonts/Satoshi-Bold.woff2", weight: "700" },
-  ],
-  display: "swap",
-  variable: "--font-sans",
-});
-const serif = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], display: "swap", variable: "--font-serif" });
+const sans = Plus_Jakarta_Sans({ subsets: ["latin"], weight: ["400", "500", "600", "700"], display: "swap", variable: "--font-sans" });
+const serif = Playfair_Display({ subsets: ["latin"], weight: ["500"], style: ["italic"], display: "swap", variable: "--font-serif" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
