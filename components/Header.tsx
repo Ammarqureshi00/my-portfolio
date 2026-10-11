@@ -20,6 +20,7 @@ export default function Header() {
 
   return (
     <header id="hd" className={scrolled ? "s" : undefined}>
+      <a className="skip-link" href="#top">Skip to content</a>
       <div className="w">
         <nav aria-label="Primary">
           <Link href="/" className="logo" aria-label="Ammar Qureshi, home"><b>A</b><span>AMMAR<br />QURESHI</span></Link>

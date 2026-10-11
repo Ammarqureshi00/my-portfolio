@@ -39,6 +39,33 @@ export type Post = {
 
 const BASE_SERVICES: ServicePage[] = [
   {
+    slug: "shopify-development",
+    name: "Shopify Development",
+    short: "Build or improve a Shopify storefront, from Liquid theme sections and collection pages to a clearer mobile shopping journey.",
+    metaTitle: "Shopify Developer for Theme & Storefront Work | Ammar Qureshi",
+    metaDescription: "Shopify storefront development for theme customizations, Liquid sections, responsive product and collection pages, and performance improvements.",
+    h1: "Shopify Development for a Storefront That Fits",
+    intro: "A Shopify theme should fit the products and the way customers shop, not force every store into the same layout. I build and improve Shopify storefronts with Liquid theme work, responsive sections and a clear path from collection to product.",
+    firstCheck: "I’d look at the current theme, product and collection structure, and the mobile shopping path before recommending a theme change or custom section.",
+    forWho: ["Store owners launching a Shopify storefront", "Businesses that need theme sections tailored to their products", "Shopify merchants improving product and collection pages", "Owners who need a focused storefront fix rather than a full replatform"],
+    included: [
+      ["Theme customization", "Adjust the existing Shopify theme where that is the simplest maintainable option."],
+      ["Liquid sections", "Build reusable theme sections for content and merchandising needs."],
+      ["Product and collection pages", "Organize product details and collection browsing around what shoppers need to compare."],
+      ["Responsive storefront", "Check page layouts and interactions at mobile and desktop widths."],
+      ["Theme app review", "Review app impact and remove overlapping storefront features when appropriate."],
+      ["Storefront performance", "Inspect images, theme assets and app scripts for avoidable loading weight."],
+    ],
+    process: [["Review", "Look through the theme, catalog and requested changes."], ["Scope", "Agree what to customize and what should stay native to Shopify."], ["Build", "Implement theme and Liquid changes in a controlled copy where available."], ["Check", "Review responsive layouts and the relevant shopping path."], ["Handover", "Summarize the changes and how to manage them."]],
+    faqs: [
+      { q: "Can you customize my existing Shopify theme?", a: "Yes. I first check whether the requested change fits the theme’s settings or needs a custom Liquid section, then recommend the smaller maintainable option." },
+      { q: "Can you build custom Liquid sections?", a: "Yes. Share the section you need and how you expect to use it, and I can scope a reusable theme section." },
+      { q: "Will you guarantee more sales?", a: "No. I can improve the storefront experience and fix usability or implementation issues, but sales depend on the products, traffic, pricing and many other factors." },
+      { q: "Can you move my store to Shopify?", a: "I can review the current platform, catalog and URL structure first. The migration scope and redirect plan depend on the source store and its data." },
+    ],
+    posts: [],
+  },
+  {
     slug: "wordpress-blog-development",
     name: "WordPress Blog Development",
     short: "Build a WordPress blog that’s easy to publish to—or get an existing slow, cluttered one back on track.",
@@ -202,14 +229,22 @@ const BASE_POSTS: Post[] = [
   },
 ];
 
-export const SERVICE_PAGES: ServicePage[] = [...BASE_SERVICES, ...REACT_SERVICES];
+const SERVICE_PRIORITY = ["wordpress-blog-development", "shopify-development", "woocommerce-development", "wordpress-plugin-theme-issue-fixing"];
+export const SERVICE_PAGES: ServicePage[] = [...BASE_SERVICES, ...REACT_SERVICES].sort((a, b) => {
+  const aPriority = SERVICE_PRIORITY.indexOf(a.slug);
+  const bPriority = SERVICE_PRIORITY.indexOf(b.slug);
+  return (aPriority < 0 ? SERVICE_PRIORITY.length : aPriority) - (bPriority < 0 ? SERVICE_PRIORITY.length : bPriority);
+});
 export const POSTS: Post[] = [...BASE_POSTS, ...REACT_POSTS];
 
 export const getService = (slug: string) => SERVICE_PAGES.find((s) => s.slug === slug);
 export const getPost = (slug: string) => POSTS.find((p) => p.slug === slug);
 export const slugify = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 export const readMins = (p: Post) => {
-  const words = [p.intro, ...p.sections.flatMap((s) => [...(s.p || []), ...(s.list || []), ...(s.after || [])])].join(" ").split(/\s+/).length;
-  return Math.max(2, Math.round(words / 200));
+  const words = [p.intro, ...p.sections.flatMap((s) => [s.h, ...(s.p || []), ...(s.list || []), ...(s.after || [])])]
+    .join(" ")
+    .trim()
+    .split(/\s+/).length;
+  return Math.max(1, Math.ceil(words / 200));
 };
 export const fmtDate = (d: string) => new Date(d + "T00:00:00Z").toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" });

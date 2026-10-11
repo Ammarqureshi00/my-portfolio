@@ -13,12 +13,7 @@ export default function Footer() {
         <div className="ft-grid">
           <div className="ft-brand">
             <div className="logo"><b>A</b>AMMAR QURESHI</div>
-            <p>I build WordPress and WooCommerce sites, fix the problems slowing them down, and use React or Next.js when the project needs a custom front end.</p>
-            {/* <ul className="ft-social" aria-label="Social links">
-              {SOCIALS.filter((s) => ["linkedin", "github", "instagram", "whatsapp"].includes(s.key)).map((s) => (
-                <li key={s.key}><a href={s.href} target="_blank" rel="me noopener" aria-label={s.label}><Icon name={s.key} /></a></li>
-              ))}
-            </ul> */}
+            <p>I build and improve WordPress, WooCommerce and Shopify sites, with React or Next.js for projects that need a custom front end.</p>
           </div>
           <nav aria-labelledby="ft-s"><h2 id="ft-s" className="ft-h">Services</h2>
             <ul>{SERVICE_PAGES.map((s) => <li key={s.slug}><Link href={`/services/${s.slug}`}>{s.name}</Link></li>)}</ul></nav>

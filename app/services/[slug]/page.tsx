@@ -80,11 +80,13 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       </div></section>
 
       <section><div className="w">
-        <div className="c"><h2>Related <em>reading</em></h2></div>
-        <div className="pcs">{posts.map((p) => (
-          <article key={p.slug} className="glass pc rv"><span className="cat">{p.category}</span><h3><Link href={`/blog/${p.slug}`}>{p.title}</Link></h3><p>{p.description}</p></article>
-        ))}</div>
-        <p className="c alsolink">Also see: {others.map((o, i) => <span key={o.slug}>{i > 0 && " · "}<Link href={`/services/${o.slug}`}>{o.name}</Link></span>)} · <Link href="/#work">my portfolio</Link></p>
+          {posts.length > 0 && <>
+            <div className="c"><h2>Related <em>reading</em></h2></div>
+          <div className="pcs">{posts.map((p) => (
+            <article key={p.slug} className="glass pc rv"><span className="cat">{p.category}</span><h3><Link href={`/blog/${p.slug}`}>{p.title}</Link></h3><p>{p.description}</p></article>
+          ))}</div>
+          </>}
+          <p className="c alsolink">Also see: {others.map((o, i) => <span key={o.slug}>{i > 0 && " · "}<Link href={`/services/${o.slug}`}>{o.name}</Link></span>)} · <Link href="/#work">my portfolio</Link></p>
       </div></section>
 
       <section className="hb"><div className="w c">

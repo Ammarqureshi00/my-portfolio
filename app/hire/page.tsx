@@ -7,14 +7,14 @@ import { SITE } from "@/lib/site";
 import { buildMetadata, crumbsSchema } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Hire Ammar Qureshi | WordPress, WooCommerce & React Developer",
-  description: "Need a WordPress or WooCommerce site built or fixed, or a React/Next.js developer for your team? Tell me what you need and we can start with a clear scope.",
+  title: "Hire Ammar Qureshi | WordPress & Shopify Developer",
+  description: "Need a WordPress, WooCommerce or Shopify site built or improved, or a React/Next.js developer for custom front-end work? Tell me what you need and we can start with a clear scope.",
   path: "/hire",
 });
 
 const RESUME = process.env.NEXT_PUBLIC_RESUME_URL || "";
 const FACTS: [string, string][] = [
-  ["Role", "WordPress & Full-Stack Web Developer"],
+  ["Role", SITE.jobTitle],
   ["Core stack", "WordPress, WooCommerce, PHP, JavaScript, React, Next.js"],
   ["Also", "Shopify (Liquid), Laravel, Node.js / Express, REST APIs, MySQL"],
   ["Typical work", "Site and store builds, plugin and theme fixes, speed and technical SEO"],

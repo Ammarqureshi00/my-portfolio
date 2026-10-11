@@ -7,8 +7,8 @@ import { SITE } from "@/lib/site";
 import { buildMetadata, crumbsSchema } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "WordPress, WooCommerce & Next.js Development | Ammar Qureshi",
-  description: "Build or improve a WordPress site or WooCommerce store, fix a stubborn plugin or checkout issue, or bring a React or Next.js project to life.",
+  title: "WordPress, WooCommerce & Shopify Development | Ammar Qureshi",
+  description: "Build or improve a WordPress site, WooCommerce store or Shopify storefront; fix theme and plugin issues; or bring a React or Next.js project to life.",
   path: "/services",
 });
 

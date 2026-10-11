@@ -1,7 +1,7 @@
 export const SITE = {
   name: "Ammar Qureshi",
-  title: "Ammar Qureshi | WordPress, WooCommerce & Next.js Developer",
-  jobTitle: "WordPress & Full-Stack Web Developer",
+  title: "Ammar Qureshi | WordPress, WooCommerce & Shopify Developer",
+  jobTitle: "WordPress & Shopify Developer",
   description:
     "I build and improve WordPress, WooCommerce and Shopify sites, fix performance and technical SEO issues, and create custom React or Next.js front ends when a project needs them.",
   url: (process.env.NEXT_PUBLIC_SITE_URL || "https://ammarqureshi-nine.vercel.app").replace(/\/$/, ""),

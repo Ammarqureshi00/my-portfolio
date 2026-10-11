@@ -3,24 +3,29 @@ import Image from "next/image";
 import { useState } from "react";
 import { PROJECTS, TABS } from "@/lib/site";
 
+const FEATURED_PROJECTS = ["remote-it-jobs", "hexura", "cursed-text-generator"];
+
 export default function Work() {
-  const [filter, setFilter] = useState("All");
+  const [filter, setFilter] = useState("Featured");
+  const filters = ["Featured", ...TABS];
   return (
     <section id="work" aria-labelledby="work-h">
       <div className="w">
         <div className="c">
           <span className="pill">Selected Work</span>
           <h2 id="work-h">Selected <em>Work</em></h2>
-          <p className="lead">A few live projects across websites, online stores and custom interfaces. Open one to see it in context.</p>
+          <p className="lead">Selected live projects across WordPress, Shopify and custom development. Use the filters to explore the complete project list.</p>
         </div>
         <div className="tabs" role="group" aria-label="Filter projects">
-          {TABS.map((t) => (
+          {filters.map((t) => (
             <button key={t} type="button" aria-pressed={filter === t} onClick={() => setFilter(t)}>{t}</button>
           ))}
         </div>
-        <div className={`wk${filter !== "All" ? " f" : ""}`} aria-live="polite">
+        <div className={`wk${filter !== "All" && filter !== "Featured" ? " f" : ""}`} aria-live="polite">
           {PROJECTS.map((p, i) => {
-            const hide = filter !== "All" && !p.categories.includes(filter);
+            const hide = filter === "Featured"
+              ? !FEATURED_PROJECTS.includes(p.slug)
+              : filter !== "All" && !p.categories.includes(filter);
             const projectUrl = new URL(p.url);
             const projectLink = projectUrl.host + (projectUrl.pathname === "/" ? "" : projectUrl.pathname.replace(/\/$/, ""));
             return (
@@ -41,6 +46,11 @@ export default function Work() {
             );
           })}
         </div>
+        {filter === "Featured" && (
+          <p className="c" style={{ marginTop: 32 }}>
+            <button className="btn" type="button" onClick={() => setFilter("All")}>View all {PROJECTS.length} projects →</button>
+          </p>
+        )}
       </div>
     </section>
   );

@@ -12,7 +12,6 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 import JsonLd from "@/components/JsonLd";
-import ConversionCTA from "@/components/ConversionCTA";
 import StickyActionBar from "@/components/StickyActionBar";
 
 export default function Home() {
@@ -31,7 +30,6 @@ export default function Home() {
         <Testimonials />
         <HomeFAQ />
         <Contact />
-        <ConversionCTA />
       </main>
       <Footer />
       <StickyActionBar />
