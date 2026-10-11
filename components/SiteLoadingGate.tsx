@@ -7,8 +7,9 @@ function waitForImage(image: HTMLImageElement) {
   if (image.complete) return Promise.resolve();
 
   return new Promise<void>((resolve) => {
-    image.addEventListener("load", resolve, { once: true });
-    image.addEventListener("error", resolve, { once: true });
+    const settle = () => resolve();
+    image.addEventListener("load", settle, { once: true });
+    image.addEventListener("error", settle, { once: true });
   });
 }
 
@@ -21,7 +22,7 @@ export default function SiteLoadingGate({ children }: { children: React.ReactNod
     let cancelled = false;
     const pageLoaded = document.readyState === "complete"
       ? Promise.resolve()
-      : new Promise<void>((resolve) => window.addEventListener("load", resolve, { once: true }));
+      : new Promise<void>((resolve) => window.addEventListener("load", () => resolve(), { once: true }));
     const fontsLoaded = document.fonts.ready;
     const firstScreenImages = Array.from(
       document.querySelectorAll<HTMLImageElement>('#site-content img[fetchpriority="high"]'),

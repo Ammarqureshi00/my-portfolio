@@ -13,8 +13,22 @@ export default function Contact() {
     e.preventDefault();
     const f = e.currentTarget;
     const d = new FormData(f);
-    const name = String(d.get("name") || ""), email = String(d.get("email") || ""), type = String(d.get("type") || ""), message = String(d.get("message") || "");
-    if (!name || !f.email.validity.valid || !message) return setStatus("Please complete name, a valid email and message.");
+    const name = String(d.get("name") || "").trim();
+    const email = String(d.get("email") || "").trim();
+    const type = String(d.get("type") || "");
+    const message = String(d.get("message") || "").trim();
+    const invalidField = !name
+      ? f.querySelector<HTMLInputElement>('input[name="name"]')
+      : !f.email.validity.valid
+        ? f.querySelector<HTMLInputElement>('input[name="email"]')
+        : !message
+          ? f.querySelector<HTMLTextAreaElement>('textarea[name="message"]')
+          : null;
+    if (invalidField) {
+      setStatus("Please complete name, a valid email and message.");
+      invalidField.focus();
+      return;
+    }
     track("generate_lead", { form_name: "contact", project_type: type, page_path: window.location.pathname });
     window.location.href = `mailto:${CONTACT.email}?subject=${encodeURIComponent(`${type} — ${name}`)}&body=${encodeURIComponent(`${message}\n\n${name} (${email})`)}`;
     setStatus("Opening your email app…");

@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="w hg">
         <div>
           <span className="pill rv">WordPress · WooCommerce · React / Next.js</span>
-          <h1 className="rv">I build and fix the websites <em>your business relies on.</em></h1>
+          <h1 className="rv">I build WordPress &amp; Shopify websites that <em>help your business grow.</em></h1>
           <p className="sub rv">{SITE.description}</p>
           <div className="hero-trust rv">
             <div>
@@ -15,7 +15,7 @@ export default function Hero() {
               {SITE.responseTime && <p className="response-time">Typical response time: {SITE.responseTime}</p>}
             </div>
             <div className="hero-actions">
-              <a className="btn g" href="/hire#contact">Talk about your project</a>
+              <a className="btn g" href="/hire#contact">Discuss your project</a>
               <a className="btn" href={SITE.whatsapp} target="_blank" rel="noopener">Message me on WhatsApp</a>
               {SITE.resumeUrl && <a className="btn" href={SITE.resumeUrl} target="_blank" rel="noopener" data-track="resume_download">Download résumé</a>}
             </div>

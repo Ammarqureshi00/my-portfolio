@@ -18,7 +18,7 @@ export default function ThemeToggle() {
     root.dataset.themeTransition = "true";
     root.dataset.theme = next;
     root.style.colorScheme = next;
-    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", next === "light" ? "#f6f5f8" : "#07060d");
+    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", next === "light" ? "#F5F7FA" : "#101318");
     setTheme(next);
     window.setTimeout(() => delete root.dataset.themeTransition, 240);
     try {

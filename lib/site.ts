@@ -3,7 +3,7 @@ export const SITE = {
   title: "Ammar Qureshi | WordPress, WooCommerce & Next.js Developer",
   jobTitle: "WordPress & Full-Stack Web Developer",
   description:
-    "I build and improve WordPress and WooCommerce sites, fix the issues slowing them down, and use React or Next.js when a project needs a custom front end.",
+    "I build and improve WordPress, WooCommerce and Shopify sites, fix performance and technical SEO issues, and create custom React or Next.js front ends when a project needs them.",
   url: (process.env.NEXT_PUBLIC_SITE_URL || "https://ammarqureshi-nine.vercel.app").replace(/\/$/, ""),
   email: process.env.NEXT_PUBLIC_EMAIL || "ammar.techmail@gmail.com",
   phone: process.env.NEXT_PUBLIC_PHONE || "+92 329 7727245",
@@ -80,9 +80,9 @@ export const TABS = ["All", "WordPress", "Shopify", "React", "Frontend", "E-comm
 export const SERVICES: [string, string][] = [
   ["WordPress & WooCommerce", "Build a new site or store, improve the one you have, or track down a plugin, theme or checkout problem."],
   ["Shopify", "Theme changes, Liquid sections and storefront improvements that keep your catalog easy to browse."],
+  ["Speed & technical SEO", "Find what is slowing pages down or keeping useful content out of search."],
   ["React & Next.js", "Custom interfaces, marketing sites and front ends that need more than a standard theme."],
   ["Backend & APIs", "PHP, Laravel, Node.js and the integrations that connect your website to other services."],
-  ["Speed & technical SEO", "Find what is slowing pages down or keeping useful content out of search."],
   ["Workflow automation", "Connect APIs and remove repetitive steps when a small, reliable workflow is the right solution."],
 ];
 

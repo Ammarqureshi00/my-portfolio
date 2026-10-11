@@ -8,7 +8,7 @@ import { buildMetadata, crumbsSchema } from "@/lib/seo";
 const PATH = "/about";
 
 export const metadata = buildMetadata({
-git   title: "About Ammar Qureshi | WordPress & Full-Stack Developer",
+  title: "About Ammar Qureshi | WordPress & Full-Stack Developer",
   description: "I build and improve WordPress and WooCommerce sites, troubleshoot the problems that slow them down, and develop custom React and Next.js interfaces.",
   path: PATH,
 });

@@ -3,6 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   compress: true,
+  experimental: { cpus: 2 },
   images: { formats: ["image/avif", "image/webp"], qualities: [80, 95] },
   async headers() {
     return [

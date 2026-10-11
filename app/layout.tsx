@@ -1,11 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
+import localFont from "next/font/local";
+import { Instrument_Serif } from "next/font/google";
 import { SITE } from "@/lib/site";
 import SiteLoadingGate from "@/components/SiteLoadingGate";
 import "./globals.css";
 
-const sans = Plus_Jakarta_Sans({ subsets: ["latin"], weight: ["400", "500", "600", "700"], display: "swap", variable: "--font-sans" });
-const serif = Playfair_Display({ subsets: ["latin"], weight: ["500"], style: ["italic"], display: "swap", variable: "--font-serif" });
+const sans = localFont({
+  src: [
+    { path: "./fonts/Satoshi-Regular.woff2", weight: "400" },
+    { path: "./fonts/Satoshi-Medium.woff2", weight: "500" },
+    { path: "./fonts/Satoshi-Bold.woff2", weight: "700" },
+  ],
+  display: "swap",
+  variable: "--font-sans",
+});
+const serif = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], display: "swap", variable: "--font-serif" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -42,13 +51,13 @@ export const viewport: Viewport = {
   colorScheme: "light dark",
 };
 
-const themeInitScript = `(()=>{document.documentElement.dataset.appLoading="true";let saved;try{saved=localStorage.getItem("portfolio-theme")}catch{}const theme=saved==="light"||saved==="dark"?saved:matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme;document.querySelector('meta[name="theme-color"]')?.setAttribute("content",theme==="light"?"#f6f5f8":"#07060d")})()`;
+const themeInitScript = `(()=>{document.documentElement.dataset.appLoading="true";let saved;try{saved=localStorage.getItem("portfolio-theme")}catch{}const theme=saved==="light"||saved==="dark"?saved:matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme;document.querySelector('meta[name="theme-color"]')?.setAttribute("content",theme==="light"?"#F5F7FA":"#101318")})()`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${sans.variable} ${serif.variable}`} suppressHydrationWarning>
       <head>
-        <meta name="theme-color" content="#07060d" />
+        <meta name="theme-color" content="#101318" />
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body>
